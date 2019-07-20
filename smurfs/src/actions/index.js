@@ -22,17 +22,31 @@ export const ADD_SMURF_ERROR = "ADD_SMURF_ERROR";
    D - deleteSmurf
 */
 
+const URL = "http://localhost:3345/smurfs";
+console.log(URL);
+
 export const getSmurf = smurf => dispatch => {
   dispatch({ type: FETCH_SMURF });
-  const URL = "http://localhost:3345/smurfs";
-  console.log(URL);
 
   axios
     .get(URL, smurf)
-    .then(res => {
-      dispatch({ type: FETCH_SUCCESS, payload: res.data });
+    .then(results => {
+      dispatch({ type: FETCH_SUCCCESS, payload: results.data });
     })
     .catch(error => {
       dispatch({ type: FETCH_FAILURE, payload: error });
+    });
+};
+
+export const addSmurf = smurf => dispatch => {
+  dispatch({ type: ADD_SMURF });
+
+  axios
+    .post(URL, smurf)
+    .then(results => {
+      dispatch({ type: ADD_SMURF_START, payload: results.data });
+    })
+    .catch(error => {
+      dispatch({ type: ADD_SMURF_ERROR, payload: error });
     });
 };
