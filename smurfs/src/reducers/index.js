@@ -64,7 +64,7 @@ export const smurfReducer = (state = initialState, action) => {
         addingSmurf: true,
         updatingSmurf: false,
         deletingSmurf: false,
-        smurfs: [...state.smurfs, newSmurf] // new Sumurf to add with the existing one
+        smurfs: [...state.smurfs, newSmurf]
       };
 
     case ADD_SMURF_FAILURE:
