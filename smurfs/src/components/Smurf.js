@@ -2,8 +2,11 @@ import React from "react";
 import "./smurfs.css";
 
 const Smurf = props => {
-  console.log(props);
-  console.log("hello");
+  // console.log(props);
+  // console.log("hello");
+
+  // SmurfList renders Smurfs
+
   return (
     <article className="smurf">
       <h1>{props.smurf.name}</h1>

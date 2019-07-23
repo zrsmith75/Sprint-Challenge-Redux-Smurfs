@@ -27,6 +27,8 @@ class SmurfList extends Component {
     });
   };
 
+  // Make sure to add e.preventDefault() to prevent reloading issues
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.addSmurf(this.state.newSmurf);
@@ -35,6 +37,7 @@ class SmurfList extends Component {
   render() {
     return (
       <div>
+        {/* Map the API to Smurf */}
         <div>
           {this.props.smurfs.map((smurf, id) => (
             <Smurf key={id} smurf={smurf} />
@@ -71,7 +74,7 @@ class SmurfList extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.smurfs);
+  // console.log(state.smurfs);
   return {
     smurfs: state.smurfs
   };

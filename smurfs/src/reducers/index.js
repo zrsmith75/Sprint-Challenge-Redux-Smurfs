@@ -65,6 +65,7 @@ export const smurfReducer = (state = initialState, action) => {
         updatingSmurf: false,
         deletingSmurf: false,
         smurfs: [...state.smurfs, newSmurf]
+        // the smurfs return connects to newSmurf and delivers payload
       };
 
     case ADD_SMURF_FAILURE:
