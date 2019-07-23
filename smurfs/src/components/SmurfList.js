@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getSmurf } from "../actions";
 import { addSmurf } from "../actions";
-import Smurf from "./smurf";
+import Smurf from "./Smurf";
 
 class SmurfList extends Component {
   state = {
@@ -45,14 +45,14 @@ class SmurfList extends Component {
             <input
               onChange={this.handleChange}
               type="name"
-              placeholder="name"
+              placeholder="name..."
               name="name"
               value={this.state.name}
             />
             <input
               onChange={this.handleChange}
               type="age"
-              placeholder="age"
+              placeholder="age..."
               name="age"
               value={this.state.age}
             />
@@ -80,4 +80,5 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { getSmurf, addSmurf }
+  // { getSmurf }
 )(SmurfList);

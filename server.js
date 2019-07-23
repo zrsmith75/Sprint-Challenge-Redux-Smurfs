@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const port = 3345;
+const port = 3333;
 
 const server = express();
 server.use(express.json());
@@ -18,6 +18,12 @@ let smurfs = [
     age: 200,
     height: "5cm",
     id: 0
+  },
+  {
+    name: "Super Brainey",
+    age: 200,
+    height: "5cm",
+    id: 1
   }
 ];
 server.get("/smurfs", (req, res) => {
