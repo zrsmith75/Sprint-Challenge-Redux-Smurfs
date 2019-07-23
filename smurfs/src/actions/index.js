@@ -32,10 +32,16 @@ export const getSmurf = smurf => dispatch => {
     .get(URL, { smurf })
     .then(results => {
       console.log(results);
-      dispatch({ type: FETCH_SUCCESS, payload: results.data });
+      dispatch({
+        type: FETCH_SUCCESS,
+        payload: results.data
+      });
     })
     .catch(error => {
-      dispatch({ type: FETCH_FAILURE, payload: error });
+      dispatch({
+        type: FETCH_FAILURE,
+        payload: error
+      });
     });
 };
 
@@ -47,9 +53,15 @@ export const addSmurf = smurf => dispatch => {
     // .then(() => console.log("print from post"))
     .then(results => {
       console.log(results);
-      dispatch({ type: ADD_SMURF_SUCCESS, payload: results.data });
+      dispatch({
+        type: ADD_SMURF_SUCCESS,
+        payload: results.data
+      });
     })
     .catch(error => {
-      dispatch({ type: ADD_SMURF_FAILURE, payload: error });
+      dispatch({
+        type: ADD_SMURF_FAILURE,
+        payload: error
+      });
     });
 };
