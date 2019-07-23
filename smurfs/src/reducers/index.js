@@ -7,18 +7,18 @@ import {
   FETCH_SUCCESS,
   FETCH_FAILURE,
   ADD_SMURF,
-  ADD_SMURF_START,
-  ADD_SMURF_ERROR
+  ADD_SMURF_SUCCESS,
+  ADD_SMURF_FAILURE
 } from "../actions";
 
 
 //  Your initial/default state for this project could *Although does not have to* look a lot like this
  const initialState = {
    smurfs: [],
-   fetchingSmurfs: false
-   addingSmurf: false
-   updatingSmurf: false
-   deletingSmurf: false
+   fetchingSmurfs: false,
+   addingSmurf: false,
+   updatingSmurf: false,
+   deletingSmurf: false,
    error: null
  }
 
@@ -31,3 +31,17 @@ import {
   There is no need for 'combineReducers' in this project.
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
+ 
+export const smurfReducer = (state = initialState, action) =>  {
+  switch (action.type) {
+    case FETCH_SMURF:
+      retrun {
+        
+      }
+      
+      break;
+  
+    default:
+      break;
+  }
+}
