@@ -8,8 +8,8 @@ export const FETCH_SMURF = "FETCH_SMURF";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 export const ADD_SMURF = "ADD_SMURF";
-export const ADD_SMURF_START = "ADD_SMURF_START";
-export const ADD_SMURF_ERROR = "ADD_SMURF_ERROR";
+export const ADD_SMURF_SUCESS = "ADD_SMURF_SUCESS";
+export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE";
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -38,15 +38,15 @@ export const getSmurf = smurf => dispatch => {
     });
 };
 
-export const addSmurf = smurf => dispatch => {
-  dispatch({ type: ADD_SMURF });
+// export const addSmurf = smurf => dispatch => {
+//   dispatch({ type: ADD_SMURF });
 
-  axios
-    .post(URL, smurf)
-    .then(results => {
-      dispatch({ type: ADD_SMURF_START, payload: results.data });
-    })
-    .catch(error => {
-      dispatch({ type: ADD_SMURF_ERROR, payload: error });
-    });
-};
+//   axios
+//     .post(URL, smurf)
+//     .then(results => {
+//       dispatch({ type: ADD_SMURF_SUCESS, payload: results.data });
+//     })
+//     .catch(error => {
+//       dispatch({ type: ADD_SMURF_FAILURE, payload: error });
+//     });
+// };
