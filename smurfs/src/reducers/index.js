@@ -55,12 +55,18 @@ export const smurfReducer = (state = initialState, action) => {
         addingSmurf: true
       };
     case ADD_SMURF_SUCCESS:
+      const newSmurf = {
+        value: action.payload
+      };
       return {
         ...state,
-        error: null,
-        addingSmurf: false,
-        smurfs: [...state, action.payload]
+        fetchingSmurfs: false,
+        addingSmurf: true,
+        updatingSmurf: false,
+        deletingSmurf: false,
+        smurfs: [...state.smurfs, newSmurf] // new Sumurf to add with the existing one
       };
+
     case ADD_SMURF_FAILURE:
       return {
         ...state,
