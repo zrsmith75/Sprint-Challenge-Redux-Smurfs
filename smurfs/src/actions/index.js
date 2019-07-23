@@ -31,7 +31,7 @@ export const getSmurf = smurf => dispatch => {
   axios
     .get(URL, { smurf })
     .then(results => {
-      console.log(results);
+      // console.log(results);
       dispatch({
         type: FETCH_SUCCESS,
         payload: results.data
@@ -52,7 +52,7 @@ export const addSmurf = smurf => dispatch => {
     .post(URL, { smurf })
     // .then(() => console.log("print from post"))
     .then(results => {
-      console.log(results);
+      // console.log(results);
       dispatch({
         type: ADD_SMURF_SUCCESS,
         payload: results.data

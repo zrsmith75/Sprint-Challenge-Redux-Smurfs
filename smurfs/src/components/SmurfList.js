@@ -80,5 +80,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { getSmurf, addSmurf }
-  // { getSmurf }
 )(SmurfList);
